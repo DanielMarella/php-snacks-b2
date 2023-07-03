@@ -27,16 +27,16 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato" -->
     <form action="./index.php" method="get">
         <h1>inserisci il tuo nome</h1>
         <input type="text" name ="name">
-        <button>submit</button>
+
 
         <h1>inserisci la tua email</h1>
         <input type="text" name ="email">
-        <button>submit</button>
+
 
         <h1>inserisci la tua eta</h1>
         <input type="text" name ="age">
+        
         <button>submit</button>
-
     </form>
 
 
@@ -48,7 +48,19 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato" -->
             echo ($name);
             }
 
-            
+            if (str_contains($email ,'.') && str_contains($email ,'@')) {
+                echo ($email);
+            }
+            else{
+                echo 'please enter a valid email';
+            }
+
+            if (is_numeric($age)){
+                echo ($age);
+            }
+            else{
+                echo 'please enter a valid age';
+            }
         ?>
             
 
